@@ -4,6 +4,8 @@ A fast, minimal app launcher for KDE Plasma (Wayland) built with
 [Quickshell](https://quickshell.org). Shows your recently launched apps
 with "x hours ago" timestamps, and filters installed apps as you type.
 
+Full step-by-step guide: [INSTRUCTIONS.txt](INSTRUCTIONS.txt)
+
 ## Requirements
 
 - Arch Linux (or any distro with Quickshell)
@@ -14,13 +16,13 @@ with "x hours ago" timestamps, and filters installed apps as you type.
 
 ```bash
 yay -S quickshell
-git clone https://github.com/Opickle/quicksearch.git
-cd quicksearch
-./install.sh
+git clone https://github.com/Opickle/New-windows-search-in-linux.git
+cd New-windows-search-in-linux
+bash install.sh
 ```
 
 Then bind a key: **System Settings > Shortcuts > Add Application >
-"Quicksearch Toggle"**, and assign a key (e.g. Alt+Space).
+"Quicksearch Toggle"**, and assign a key (e.g. Alt+Space). Click Apply.
 
 ## Usage
 
@@ -38,8 +40,7 @@ fills up as you use it.
 ## Customize
 
 Edit the `SETTINGS` block at the top of
-`~/.config/quickshell/quicksearch/shell.qml` (colors, size, position,
-number of results), then restart:
+`~/.config/quickshell/quicksearch/shell.qml`, then restart:
 
 ```bash
 systemctl --user restart quicksearch
@@ -56,10 +57,10 @@ qs -c quicksearch ipc call launcher toggle   # test without the shortcut
 ## Uninstall
 
 ```bash
-./uninstall.sh          # keeps launch history
-./uninstall.sh --purge  # also deletes history
+bash uninstall.sh          # keeps launch history
+bash uninstall.sh --purge  # also deletes history
 ```
 
 ## License
 
-MIT
+Public domain (Unlicense).
