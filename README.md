@@ -1,4 +1,4 @@
-# quicksearch
+# Lumen
 
 A fast, minimal app launcher for KDE Plasma (Wayland) built with
 [Quickshell](https://quickshell.org). Shows your recently launched apps
@@ -16,13 +16,13 @@ Full step-by-step guide: [INSTRUCTIONS.txt](INSTRUCTIONS.txt)
 
 ```bash
 yay -S quickshell
-git clone https://github.com/Opickle/New-windows-search-in-linux.git
-cd New-windows-search-in-linux
+git clone https://github.com/Opickle/Lumen.git
+cd Lumen
 bash install.sh
 ```
 
 Then bind a key: **System Settings > Shortcuts > Add Application >
-"Quicksearch Toggle"**, and assign a key (e.g. Alt+Space). Click Apply.
+"Lumen Toggle"**, and assign a key (e.g. Alt+Space). Click Apply.
 
 ## Usage
 
@@ -40,18 +40,18 @@ fills up as you use it.
 ## Customize
 
 Edit the `SETTINGS` block at the top of
-`~/.config/quickshell/quicksearch/shell.qml`, then restart:
+`~/.config/quickshell/lumen/shell.qml`, then restart:
 
 ```bash
-systemctl --user restart quicksearch
+systemctl --user restart lumen
 ```
 
 ## Troubleshooting
 
 ```bash
-systemctl --user status quicksearch
-journalctl --user -u quicksearch -n 30
-qs -c quicksearch ipc call launcher toggle   # test without the shortcut
+systemctl --user status lumen
+journalctl --user -u lumen -n 30
+qs -c lumen ipc call launcher toggle   # test without the shortcut
 ```
 
 ## Uninstall
