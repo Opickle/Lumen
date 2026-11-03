@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Installs quicksearch for the current user. No sudo needed.
+# Installs Lumen for the current user. No sudo needed.
 set -euo pipefail
 
-NAME="quicksearch"
+NAME="lumen"
 SRC_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONF_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/quickshell/$NAME"
 BIN_DIR="$HOME/.local/bin"
@@ -36,8 +36,8 @@ echo "==> Writing desktop entry (used for the KDE shortcut)"
 cat > "$APP_DIR/$NAME-toggle.desktop" <<DESKTOP
 [Desktop Entry]
 Type=Application
-Name=Quicksearch Toggle
-Comment=Open or close the quicksearch launcher
+Name=Lumen Toggle
+Comment=Open or close the Lumen launcher
 Exec=sh $BIN_DIR/$NAME-toggle
 Terminal=false
 DESKTOP
@@ -46,7 +46,7 @@ command -v kbuildsycoca6 >/dev/null 2>&1 && kbuildsycoca6 >/dev/null 2>&1 || tru
 echo "==> Setting up autostart (systemd user service)"
 cat > "$SVC_DIR/$NAME.service" <<SERVICE
 [Unit]
-Description=Quicksearch launcher (Quickshell)
+Description=Lumen launcher (Quickshell)
 After=graphical-session.target
 PartOf=graphical-session.target
 
@@ -66,7 +66,7 @@ cat <<DONE
 Installed.
 
 Last step (manual): bind a key in
-  System Settings > Shortcuts > Add Application > "Quicksearch Toggle"
+  System Settings > Shortcuts > Add Application > "Lumen Toggle"
 
 Check it is running:   systemctl --user status $NAME
 See errors:            journalctl --user -u $NAME -n 30
