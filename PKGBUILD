@@ -15,7 +15,7 @@ optdepends=(
   'bluez-utils: Bluetooth quick actions (bluetoothctl)'
 )
 makedepends=('git')
-source=("lumen::git+https://github.com/Opickle/Lumen.git#commit=4f294e4ed444a970a13a12745ee2d03a912")
+source=("lumen::git+https://github.com/Opickle/Lumen.git#commit=f8130f2d071f8869857745726aa19f6993b33381")
 sha256sums=('SKIP')
 
 package() {
