@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Lumen
+Comment=Search installed applications and run quick actions
+Exec=lumen
+Icon=system-search
+Terminal=false
+Categories=Utility;
+Keywords=search;launcher;applications;
