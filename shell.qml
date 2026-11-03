@@ -103,7 +103,7 @@ ShellRoot {
     property var history: ({})   // item id -> last used (ms since epoch)
 
     readonly property string stateDir:
-        (Quickshell.env("XDG_STATE_HOME") || (Quickshell.env("HOME") + "/.local/state")) + "/quicksearch"
+        (Quickshell.env("XDG_STATE_HOME") || (Quickshell.env("HOME") + "/.local/state")) + "/lumen"
 
     // Make sure the folder for the history file exists.
     Process {
@@ -140,7 +140,7 @@ ShellRoot {
     }
 
     // Control from a terminal or shortcut:
-    //   qs -c quicksearch ipc call launcher toggle
+    //   qs -c lumen ipc call launcher toggle
     IpcHandler {
         target: "launcher"
         function toggle(): void { root.open = !root.open }
