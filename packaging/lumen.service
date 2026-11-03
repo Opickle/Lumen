@@ -1,0 +1,11 @@
+[Unit]
+Description=Lumen application launcher
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/qs -c lumen
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
