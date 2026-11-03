@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! command -v qs >/dev/null 2>&1; then
+  echo "Lumen requires Quickshell. Install it with: sudo pacman -S quickshell" >&2
+  exit 1
+fi
+
+# Toggle an existing instance. If none is running, start it and then open it.
+if qs -c lumen ipc call launcher toggle >/dev/null 2>&1; then
+  exit 0
+fi
+
+qs -n -d -c lumen
+
+for _ in {1..30}; do
+  if qs -c lumen ipc call launcher toggle >/dev/null 2>&1; then
+    exit 0
+  fi
+  sleep 0.1
+done
+
+echo "Lumen did not start. Check Quickshell output with: qs -c lumen" >&2
+exit 1
