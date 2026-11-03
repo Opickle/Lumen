@@ -1,5 +1,5 @@
 # Maintainer: Opickle
-pkgname=lumen
+pkgname=lumen-search
 pkgver=0.1.0
 pkgrel=1
 pkgdesc="A Windows-inspired application launcher for KDE Plasma, built with Quickshell"
