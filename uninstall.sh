@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Removes quicksearch. Your launch history is kept unless you pass --purge.
+# Removes Lumen. Your launch history is kept unless you pass --purge.
 set -u
 
-NAME="quicksearch"
+NAME="lumen"
 systemctl --user disable --now "$NAME.service" 2>/dev/null || true
 rm -f "${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user/$NAME.service"
 systemctl --user daemon-reload
@@ -15,4 +15,4 @@ if [ "${1:-}" = "--purge" ]; then
     rm -rf "${XDG_STATE_HOME:-$HOME/.local/state}/$NAME"
 fi
 
-echo "Removed. Also delete the Quicksearch Toggle shortcut in System Settings > Shortcuts."
+echo "Removed. Also delete the Lumen Toggle shortcut in System Settings > Shortcuts."
